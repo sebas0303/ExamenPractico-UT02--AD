@@ -1,4 +1,4 @@
-package ut2.ficheros.examen;
+package binding;
 
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlRootElement;
@@ -8,6 +8,8 @@ import java.io.Serializable;
  *
  * @author arquinigo
  */
+
+//Indicar el elemento raiz
 @XmlRootElement
 public class SistemaCritico implements Serializable{
     private String instalacionONave;
@@ -49,4 +51,11 @@ public class SistemaCritico implements Serializable{
     public void setEstado(String estado) {
         this.estado = estado;
     }
+
+    @Override
+    public String toString() {
+        return "SistemaCritico{" + "instalacionONave=" + instalacionONave + ", componente=" + componente + ", estado=" + estado + '}';
+    }
+    
+    
 }
