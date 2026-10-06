@@ -21,7 +21,6 @@ public class GenerarObjetivo {
             // Creamos un personaje
             SistemaCritico personaje = new SistemaCritico(
                     "preuba",
-                    "prueba",
                     "prueba"
             );
 

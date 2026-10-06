@@ -1,5 +1,9 @@
 package ut2.ficheros.examen;
 
+/**
+ *
+ * @author arquinigo
+ */
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;

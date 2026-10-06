@@ -1,40 +1,37 @@
 package binding;
 
+import jakarta.xml.bind.annotation.XmlAttribute;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlRootElement;
+import jakarta.xml.bind.annotation.XmlType;
 import java.io.Serializable;
 
-/**
- *
- * @author arquinigo
- */
+@XmlRootElement(name = "sistema")
+@XmlType(propOrder = {"componente"})
+public class SistemaCritico implements Serializable {
 
-//Indicar el elemento raiz
-@XmlRootElement
-public class SistemaCritico implements Serializable{
-    private String instalacionONave;
-    private String componente;
-    private String estado;
+    private String nombre;     // Irá como atributo
+    private String componente; // Irá como elemento hijo
 
+    // Constructor vacío obligatorio
     public SistemaCritico() {
     }
 
-    public SistemaCritico(String instalacionONave, String componente, String estado) {
-        this.instalacionONave = instalacionONave;
+    public SistemaCritico(String nombre, String componente) {
+        this.nombre = nombre;
         this.componente = componente;
-        this.estado = estado;
     }
 
-    @XmlElement
-    public String getInstalacionONave() {
-        return instalacionONave;
+    @XmlAttribute(name = "nombre")
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setInstalacionONave(String instalacionONave) {
-        this.instalacionONave = instalacionONave;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
-    @XmlElement
+    @XmlElement(name = "componente")
     public String getComponente() {
         return componente;
     }
@@ -42,20 +39,4 @@ public class SistemaCritico implements Serializable{
     public void setComponente(String componente) {
         this.componente = componente;
     }
-
-    @XmlElement
-    public String getEstado() {
-        return estado;
-    }
-
-    public void setEstado(String estado) {
-        this.estado = estado;
-    }
-
-    @Override
-    public String toString() {
-        return "SistemaCritico{" + "instalacionONave=" + instalacionONave + ", componente=" + componente + ", estado=" + estado + '}';
-    }
-    
-    
 }
